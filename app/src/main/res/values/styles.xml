@@ -1,10 +1,49 @@
-<resources>
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--use for light theme-->
+    <style name="Theme.Volu" parent="Base.Theme.Volu" >
+        <!-- colors -->
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorPrimaryVariant">@color/brand_primary_dark</item>
+        <item name="colorSecondary">@color/brand_secondary</item>
+        <item name="colorSecondaryVariant">@color/brand_secondary_dark</item>
+        <item name="colorOnPrimary">@color/brand_on_primary_color</item>
+        <item name="colorOnSecondary">@color/brand_on_secondary_color</item>
+        <item name="colorError">@color/design_default_color_error</item>
+        <item name="colorOnError">#ffffff</item>
+        <item name="colorSurface">@color/brand_light_surface</item>
+        <item name="colorOnSurface">@color/brand_on_light_surface</item>
+        <item name="android:colorBackground">@color/brand_light_background</item>
+        <item name="colorOnBackground">@color/brand_on_light_background</item>
+        <item name="android:statusBarColor" tools:ignore="NewApi">?attr/colorSurface</item>
     </style>
+
+
+    <!-- Base application theme. -->
+    <style  name="Base.Theme.Volu" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!--shape-->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.CountrySearch.MediumComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.CountrySearch.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.CountrySearch.LargeComponent</item>
+
+        <!--typography-->
+        <item name="textAppearanceHeadline5">@style/TextAppearance.CountrySearch.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.CountrySearch.Headline6</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.CountrySearch.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.CountrySearch.Body2</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.CountrySearch.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.CountrySearch.Subtitle2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.CountrySearch.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.CountrySearch.Overline</item>
+
+        <!--components styles i.e toolbarStyle ,cardViewStyle ,tabStyle e.t.c -->
+
+        <!--system -->
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+        <item name="android:navigationBarColor" tools:ignore="NewApi">?android:attr/colorBackground</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
+    </style>
+
 
 </resources>
