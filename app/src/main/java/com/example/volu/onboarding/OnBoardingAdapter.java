@@ -51,7 +51,7 @@ public class OnBoardingAdapter extends RecyclerView.Adapter<OnBoardingAdapter.On
         void setOnBoardingData(OnBoardingItem onBoardingItem) {
             textTitle.setText(onBoardingItem.getTitle());
             textDescription.setText(onBoardingItem.getDescription());
-            imageOnBoarding.setImageResource(onBoardingItem.getImage());
+            imageOnBoarding.setImageDrawable(onBoardingItem.getImage());
         }
     }
 }

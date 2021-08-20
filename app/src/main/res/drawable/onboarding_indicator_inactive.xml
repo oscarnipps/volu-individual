@@ -4,6 +4,6 @@
     <size android:width="8dp"
         android:height="8dp"/>
     <corners android:radius="25dp"/>
-    <solid android:color="@color/brand_primary_dark"/>
+    <solid android:color="@color/inactiveIndicator"/>
 
 </shape>

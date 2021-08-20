@@ -2,38 +2,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="60dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
     <ImageView
+        tools:src="@drawable/ic_test"
         android:id="@+id/imageOnboarding"
         android:layout_width="300dp"
         android:layout_height="350dp"
-        android:layout_marginTop="15dp"
-        android:adjustViewBounds="true"
+        android:layout_margin="16dp"
         android:contentDescription="@string/app_name" />
 
     <TextView
+        android:textColor="@color/brand_primary_dark"
         android:id="@+id/textTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/raleway_medium"
-        android:gravity="center"
-        android:textAllCaps="true"
-        android:textColor="?attr/colorOnSurface"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textAlignment="center"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:text="@string/on_boarding_title_1"
+       />
 
     <TextView
+        android:text="@string/on_boarding_description_1"
         android:id="@+id/textDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/raleway_regular"
-        android:gravity="center"
-        android:textColor="?attr/colorSecondary"
-        android:textSize="17sp" />
+        android:layout_margin="@dimen/default_margin"
+        android:textAppearance="?attr/textAppearanceBody1"
+        android:textAlignment="center"
+        android:textColor="#7C7A7A"
+        android:lineSpacingExtra="8dp"/>
 
 </LinearLayout>

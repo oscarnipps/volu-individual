@@ -1,5 +1,6 @@
 package com.example.volu.onboarding;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.volu.R;
@@ -26,29 +29,30 @@ public class OnBoardingFragment extends Fragment {
     private LinearLayout mOnBoardingIndicator;
     private FragmentOnBoardingBinding mBinding;
     private ViewPager2 mViewPager;
+    private NavController mNavController;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_on_boarding, container, false);
 
-        setOnBoardingItem();
-
         mViewPager = mBinding.onBoardingViewPager;
 
         mOnBoardingIndicator = mBinding.onBoardingIndicator;
 
+        setOnBoardingItems();
+
         mViewPager.setAdapter(mOnBoardingAdapter);
 
-        setOnBoardingIndicator();
+        setOnBoardingIndicators();
 
-        setCurrentOnBoardingIndicators(0);
+        setCurrentOnBoardingItemIndicator(0);
 
         mViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                setCurrentOnBoardingIndicators(position);
+                setCurrentOnBoardingItemIndicator(position);
             }
         });
 
@@ -58,48 +62,45 @@ public class OnBoardingFragment extends Fragment {
                 return;
             }
 
-            //todo: go to login /sign up screen
-            //startActivity(new Intent(requireActivity(), HomeActivity.class));
+            mNavController.navigate(R.id.navigate_to_login);
         });
 
         return mBinding.getRoot();
     }
 
-    private void setOnBoardingItem() {
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        mNavController = Navigation.findNavController(view);
+    }
+
+    private void setOnBoardingItems() {
         List<OnBoardingItem> onBoardingItems = new ArrayList<>();
 
-        OnBoardingItem itemFastFood = new OnBoardingItem();
-        itemFastFood.setTitle("Choose your meal");
-        itemFastFood.setDescription("You can easily choose your meal and take it !");
-        itemFastFood.setImage(R.drawable.ic_test);
+        String[] onBoardingTitles = getResources().getStringArray(R.array.on_boarding_titles);
 
-        OnBoardingItem itemPayOnline = new OnBoardingItem();
-        itemPayOnline.setTitle("Choose your payment");
-        itemPayOnline.setDescription("You can pay us using any methods, online or offline !");
-        itemPayOnline.setImage(R.drawable.ic_test);
+        String[] onBoardingDescriptions = getResources().getStringArray(R.array.on_boarding_descriptions);
 
-        OnBoardingItem itemEatTogether = new OnBoardingItem();
-        itemEatTogether.setTitle("Fast delivery");
-        itemEatTogether.setDescription("Our delivery partners are too fast, they will not disappoint you !");
-        itemEatTogether.setImage(R.drawable.ic_test);
+        TypedArray onBoardingImages = getResources().obtainTypedArray(R.array.on_boarding_images);
 
-        OnBoardingItem itemDayAndNight = new OnBoardingItem();
-        itemDayAndNight.setTitle("Day and Night");
-        itemDayAndNight.setDescription("Our service is on day and night !");
-        itemDayAndNight.setImage(R.drawable.ic_test);
 
-        onBoardingItems.add(itemFastFood);
+        for (int i = 0; i < onBoardingTitles.length; i++) {
+            OnBoardingItem item = new OnBoardingItem();
 
-        onBoardingItems.add(itemPayOnline);
+            item.setTitle(onBoardingTitles[i]);
 
-        onBoardingItems.add(itemEatTogether);
+            item.setDescription(onBoardingDescriptions[i]);
 
-        onBoardingItems.add(itemDayAndNight);
+            item.setImage(onBoardingImages.getDrawable(i));
+
+            onBoardingItems.add(item);
+        }
 
         mOnBoardingAdapter = new OnBoardingAdapter(onBoardingItems);
     }
 
-    private void setOnBoardingIndicator() {
+    private void setOnBoardingIndicators() {
         ImageView[] indicators = new ImageView[mOnBoardingAdapter.getItemCount()];
 
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
@@ -125,7 +126,7 @@ public class OnBoardingFragment extends Fragment {
         }
     }
 
-    private void setCurrentOnBoardingIndicators(int index) {
+    private void setCurrentOnBoardingItemIndicator(int index) {
         int childCount = mOnBoardingIndicator.getChildCount();
 
         for (int i = 0; i < childCount; i++) {
@@ -133,18 +134,19 @@ public class OnBoardingFragment extends Fragment {
             ImageView imageView = (ImageView) mOnBoardingIndicator.getChildAt(i);
 
             if (i == index) {
-                imageView.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.onboarding_indicator_active_two));
+                imageView.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.onboarding_indicator_active));
             } else {
-                imageView.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.onboarding_indicator_inactive_two));
+                imageView.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.onboarding_indicator_inactive));
             }
 
         }
 
-        if (index == (mOnBoardingAdapter.getItemCount() - 1)) {
-            mBinding.buttonOnBoardingAction.setText("Get Started");
-        } else {
-            mBinding.buttonOnBoardingAction.setText("Next");
-        }
+        mBinding.buttonOnBoardingAction.setText(getResId(index));
+    }
+
+    private int getResId(int index) {
+        //if it's the last item then use "get started" as the text
+        return index == (mOnBoardingAdapter.getItemCount() - 1) ? R.string.get_started : R.string.next;
     }
 
 }

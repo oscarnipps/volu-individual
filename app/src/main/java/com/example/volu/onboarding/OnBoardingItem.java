@@ -1,16 +1,18 @@
 package com.example.volu.onboarding;
 
+import android.graphics.drawable.Drawable;
+
 public class OnBoardingItem {
 
-    private int image;
+    private Drawable image;
     private String title;
     private String description;
 
-    public int getImage() {
+    public Drawable getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(Drawable image) {
         this.image = image;
     }
 
