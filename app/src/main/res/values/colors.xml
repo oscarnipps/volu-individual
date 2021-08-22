@@ -42,4 +42,7 @@
     <!--on boarding indicator colors-->
     <color name="activeIndicators">@color/brand_primary_light</color>
     <color name="inactiveIndicator">#BBBFBF</color>
+
+    <color name="light_background">#ffffff</color>
+
 </resources>

@@ -9,8 +9,7 @@
         android:id="@+id/splashFragment"
         android:name="com.example.volu.SplashFragment"
         android:label="SplashFragment"
-        tools:layout="@layout/fragment_splash"
-        >
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/navigate_to_on_boarding"
             app:destination="@id/onBoardingFragment" />
@@ -46,10 +45,10 @@
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.example.volu.signup.SignUpFragment"
-        tools:layout="@layout/fragment_sign_up"
-        android:label="SignUpFragment" >
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up">
         <action
-            android:id="@+id/action_signUpFragment_to_mainFragment"
+            android:id="@+id/navigate_to_main_fragment"
             app:destination="@id/mainFragment" />
     </fragment>
 
