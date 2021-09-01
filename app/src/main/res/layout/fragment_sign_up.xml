@@ -50,7 +50,9 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <include layout="@layout/user_registration_info" />
+            <include
+                android:id="@+id/user_info_layout"
+                layout="@layout/user_registration_info" />
 
 
             <com.google.android.material.button.MaterialButton

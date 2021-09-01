@@ -1,4 +1,4 @@
-package com.example.volu.onboarding;
+package com.example.volu.ui.onboarding;
 
 import android.view.LayoutInflater;
 import android.view.View;

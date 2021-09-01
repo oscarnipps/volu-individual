@@ -1,4 +1,4 @@
-package com.example.volu;
+package com.example.volu.ui.onboarding;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,6 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+
+import com.example.volu.R;
 
 public class SplashFragment  extends Fragment {
 

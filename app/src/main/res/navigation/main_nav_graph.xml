@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.volu.SplashFragment"
+        android:name="com.example.volu.ui.onboarding.SplashFragment"
         android:label="SplashFragment"
         tools:layout="@layout/fragment_splash">
         <action
@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/onBoardingFragment"
-        android:name="com.example.volu.onboarding.OnBoardingFragment"
+        android:name="com.example.volu.ui.onboarding.OnBoardingFragment"
         android:label="OnBoardingFragment"
         tools:layout="@layout/fragment_on_boarding">
         <action
@@ -34,7 +34,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.volu.login.LoginFragment"
+        android:name="com.example.volu.ui.authentication.login.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
@@ -44,7 +44,7 @@
 
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.volu.signup.SignUpFragment"
+        android:name="com.example.volu.ui.authentication.SignUpFragment"
         android:label="SignUpFragment"
         tools:layout="@layout/fragment_sign_up">
         <action
@@ -54,6 +54,8 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.volu.MainFragment"
-        android:label="MainFragment" />
+        android:name="com.example.volu.ui.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main"
+        />
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.volu.onboarding;
+package com.example.volu.ui.onboarding;
 
 import android.content.res.TypedArray;
 import android.os.Bundle;

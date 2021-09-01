@@ -1,8 +1,10 @@
-package com.example.volu;
+package com.example.volu.ui;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.volu.R;
 
 public class MainActivity extends AppCompatActivity {
 
