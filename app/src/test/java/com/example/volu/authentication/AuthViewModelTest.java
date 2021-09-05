@@ -14,12 +14,10 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Pattern;
 
 import static org.junit.Assert.assertEquals;
 
@@ -29,9 +27,6 @@ public class AuthViewModelTest {
     private AuthViewModel authViewModel;
 
     private Map<Integer,Object> inputsMap;
-
-    @Mock
-    Pattern pattern;
 
     @Rule
     public InstantTaskExecutorRule instantTaskExecutorRule = new InstantTaskExecutorRule();

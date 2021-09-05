@@ -1,18 +1,18 @@
 package com.example.volu.ui.authentication;
 
-import android.util.Patterns;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.volu.R;
+import com.example.volu.data.Constants;
 import com.example.volu.data.Resource;
 import com.example.volu.data.SingleLiveEvent;
 import com.example.volu.data.ValidationStatus;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 import javax.inject.Inject;
 
@@ -103,7 +103,7 @@ public class AuthViewModel extends ViewModel {
             return;
         }
 
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        if (!Pattern.matches(Constants.EMAIL_PATTERN.toString(),email)) {
             mValidationStatusMap.put(ValidationStatus.ERROR, R.string.invalid_email_input_error);
         }
     }
