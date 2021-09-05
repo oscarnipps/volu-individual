@@ -41,7 +41,6 @@ public class AuthViewModelTest {
     public void setUp() {
         authViewModel = new AuthViewModel();
         inputsMap = getInputMap();
-        git add
     }
 
     @After
