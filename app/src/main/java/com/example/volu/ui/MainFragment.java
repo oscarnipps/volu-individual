@@ -11,6 +11,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.volu.R;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class MainFragment extends Fragment {
 
     @Override

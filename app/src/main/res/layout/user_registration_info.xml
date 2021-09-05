@@ -72,7 +72,7 @@
 
             <AutoCompleteTextView
                 android:id="@+id/sex"
-                android:hint="@string/select_gender"
+                android:hint="@string/sex"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
@@ -97,7 +97,7 @@
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="@string/email_address"
+                android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
                 android:textStyle="bold" />
