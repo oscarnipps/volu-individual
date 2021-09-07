@@ -103,7 +103,7 @@ public class AuthViewModel extends ViewModel {
             return;
         }
 
-        if (!Pattern.matches(Constants.EMAIL_PATTERN.toString(),email)) {
+        if (!Pattern.matches(Constants.EMAIL_PATTERN,email)) {
             mValidationStatusMap.put(ValidationStatus.ERROR, R.string.invalid_email_input_error);
         }
     }

@@ -107,7 +107,7 @@ public class SignUpFragment extends Fragment {
 
     }
 
-    private void setUpGenderInputDropDown() {
+    public void setUpGenderInputDropDown() {
         String[] genderItems = requireActivity().getResources().getStringArray(R.array.gender_list);
 
         ArrayAdapter<String> genderAdapter = new ArrayAdapter<>(requireContext(), R.layout.gender_list_item, genderItems);
@@ -150,20 +150,5 @@ public class SignUpFragment extends Fragment {
 
         Timber.d("validation not successful with message : %s ", message);
 
-/*        if (status.containsKey(ValidationStatus.ERROR)) {
-
-            Integer messageResId = status.get(ValidationStatus.ERROR);
-
-            String message = getString(messageResId);
-
-            Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
-
-            Timber.d("validation not successful with message : %s ", message);
-
-            return;
-        }
-
-        Timber.d("input validation successful");
-        //todo: api call to register user*/
     }
 }

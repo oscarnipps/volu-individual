@@ -12,6 +12,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/title"
                 style="@style/Widget.Volu.TextView"
                 android:drawableStart="@drawable/ic_arrow_back"
                 android:drawablePadding="@dimen/default_margin"
