@@ -14,7 +14,7 @@ android {
 
         multiDexEnabled true
 
-        testInstrumentationRunner "com.example.volu.authentication.CustomTestRunner"
+        testInstrumentationRunner "com.example.volu.CustomTestRunner"
     }
 
     buildFeatures {
@@ -139,6 +139,9 @@ dependencies {
 
     //fragments
     debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
+
+    //navigation test
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
 
     //test with hilt
     testImplementation 'com.google.dagger:hilt-android-testing:2.38.1'
